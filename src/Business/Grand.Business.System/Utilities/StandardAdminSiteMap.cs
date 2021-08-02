@@ -20,7 +20,8 @@ namespace Grand.Business.System.Utilities
                             ResourceName = "Admin.Dashboard",
                             ControllerName = "Home",
                             ActionName = "Index",
-                            IconClass = "icon-bar-chart"
+                            IconClass = "icon-bar-chart",
+                            IsActive=true
                         },
                         new AdminSiteMap {
                             SystemName = "Dashboard",
@@ -28,7 +29,8 @@ namespace Grand.Business.System.Utilities
                             ControllerName = "Home",
                             ActionName = "Statistics",
                             PermissionNames = new List<string> { PermissionSystemName.Reports },
-                            IconClass = "icon-bulb"
+                            IconClass = "icon-bulb",
+                            IsActive=true
                         },
                         new AdminSiteMap {
                             SystemName = "Shopping carts and wishlists",
@@ -36,7 +38,8 @@ namespace Grand.Business.System.Utilities
                             PermissionNames = new List<string> { PermissionSystemName.CurrentCarts },
                             ControllerName = "ShoppingCart",
                             ActionName = "CurrentCarts",
-                            IconClass = "fa fa-dot-circle-o"
+                            IconClass = "fa fa-dot-circle-o",
+                            IsActive=true
                         },
                         new AdminSiteMap {
                             SystemName = "Online customers",
@@ -44,7 +47,8 @@ namespace Grand.Business.System.Utilities
                             PermissionNames = new List<string> { PermissionSystemName.Customers },
                             ControllerName = "OnlineCustomer",
                             ActionName = "List",
-                            IconClass = "fa fa-dot-circle-o"
+                            IconClass = "fa fa-dot-circle-o",
+                            IsActive=true
                         }
                     }
                 },
@@ -61,7 +65,8 @@ namespace Grand.Business.System.Utilities
                             PermissionNames = new List<string> { PermissionSystemName.Products },
                             ControllerName = "Product",
                             ActionName = "List",
-                            IconClass = "fa fa-dot-circle-o"
+                            IconClass = "fa fa-dot-circle-o",
+                            IsActive=true
                         },
                         new AdminSiteMap {
                             SystemName = "Categories",
@@ -69,7 +74,8 @@ namespace Grand.Business.System.Utilities
                             ControllerName = "Category",
                             PermissionNames = new List<string> { PermissionSystemName.Categories },
                             ActionName = "List",
-                            IconClass = "fa fa-dot-circle-o"
+                            IconClass = "fa fa-dot-circle-o",
+                            IsActive=true
                         },
                         new AdminSiteMap {
                             SystemName = "Brands",
@@ -77,7 +83,8 @@ namespace Grand.Business.System.Utilities
                             ControllerName = "Brand",
                             PermissionNames = new List<string> { PermissionSystemName.Brands },
                             ActionName = "List",
-                            IconClass = "fa fa-dot-circle-o"
+                            IconClass = "fa fa-dot-circle-o",
+                            IsActive=false
                         },
                         new AdminSiteMap {
                             SystemName = "Collections",
@@ -85,7 +92,8 @@ namespace Grand.Business.System.Utilities
                             PermissionNames = new List<string> { PermissionSystemName.Collections },
                             ControllerName = "Collection",
                             ActionName = "List",
-                            IconClass = "fa fa-dot-circle-o"
+                            IconClass = "fa fa-dot-circle-o",
+                            IsActive=false
                         },
                         new AdminSiteMap {
                             SystemName = "Product tags",
@@ -93,7 +101,8 @@ namespace Grand.Business.System.Utilities
                             PermissionNames = new List<string> { PermissionSystemName.ProductTags },
                             ControllerName = "ProductTags",
                             ActionName = "List",
-                            IconClass = "fa fa-dot-circle-o"
+                            IconClass = "fa fa-dot-circle-o",
+                            IsActive=false
                         },
                         new AdminSiteMap {
                             SystemName = "Bulk edit products",
@@ -101,7 +110,9 @@ namespace Grand.Business.System.Utilities
                             PermissionNames = new List<string> { PermissionSystemName.Products },
                             ControllerName = "Product",
                             ActionName = "BulkEdit",
-                            IconClass = "fa fa-dot-circle-o"
+                            IconClass = "fa fa-dot-circle-o",
+                            IsActive=false
+
                         },
                         new AdminSiteMap {
                             SystemName = "Product reviews",
@@ -109,7 +120,8 @@ namespace Grand.Business.System.Utilities
                             PermissionNames = new List<string> { PermissionSystemName.ProductReviews },
                             ControllerName = "ProductReview",
                             ActionName = "List",
-                            IconClass = "fa fa-dot-circle-o"
+                            IconClass = "fa fa-dot-circle-o",
+                            IsActive=false
                         },
                         new AdminSiteMap {
                             SystemName = "Products attributes",
@@ -117,7 +129,8 @@ namespace Grand.Business.System.Utilities
                             ControllerName = "ProductAttribute",
                             ActionName = "List",
                             PermissionNames = new List<string> { PermissionSystemName.ProductAttributes },
-                            IconClass = "fa fa-dot-circle-o"
+                            IconClass = "fa fa-dot-circle-o",
+                            IsActive=false
                         },
                         new AdminSiteMap {
                             SystemName = "Specification attributes",
@@ -125,7 +138,8 @@ namespace Grand.Business.System.Utilities
                             ControllerName = "SpecificationAttribute",
                             ActionName = "List",
                             PermissionNames = new List<string> { PermissionSystemName.SpecificationAttributes },
-                            IconClass = "fa fa-dot-circle-o"
+                            IconClass = "fa fa-dot-circle-o",
+                            IsActive=false
                         },
                     }
                 },
@@ -143,7 +157,8 @@ namespace Grand.Business.System.Utilities
                             PermissionNames = new List<string> { PermissionSystemName.Orders },
                             ControllerName = "Order",
                             ActionName = "List",
-                            IconClass = "fa fa-dot-circle-o"
+                            IconClass = "fa fa-dot-circle-o",
+                            IsActive=true
                         },
                         new AdminSiteMap {
                             SystemName = "Shipments",
@@ -151,7 +166,8 @@ namespace Grand.Business.System.Utilities
                             PermissionNames = new List<string> { PermissionSystemName.Shipments },
                             ControllerName = "Shipment",
                             ActionName = "List",
-                            IconClass = "fa fa-dot-circle-o"
+                            IconClass = "fa fa-dot-circle-o",
+                            IsActive=true
                         },
                         new AdminSiteMap {
                             SystemName = "Merchandise returns",
@@ -159,7 +175,8 @@ namespace Grand.Business.System.Utilities
                             PermissionNames = new List<string> { PermissionSystemName.MerchandiseReturns },
                             ControllerName = "MerchandiseReturn",
                             ActionName = "List",
-                            IconClass = "fa fa-dot-circle-o"
+                            IconClass = "fa fa-dot-circle-o",
+                            IsActive=false
                         },
                         new AdminSiteMap {
                             SystemName = "Payment transaction",
@@ -167,7 +184,8 @@ namespace Grand.Business.System.Utilities
                             PermissionNames = new List<string> { PermissionSystemName.PaymentTransactions },
                             ControllerName = "PaymentTransaction",
                             ActionName = "List",
-                            IconClass = "fa fa-dot-circle-o"
+                            IconClass = "fa fa-dot-circle-o",
+                            IsActive=true
                         },
                         new AdminSiteMap {
                             SystemName = "OrderTags",
@@ -175,7 +193,8 @@ namespace Grand.Business.System.Utilities
                             PermissionNames = new List<string> { PermissionSystemName.OrderTags },
                             ControllerName = "OrderTags",
                             ActionName = "List",
-                            IconClass = "fa fa-dot-circle-o"
+                            IconClass = "fa fa-dot-circle-o",
+                            IsActive=false
                         },
                         new AdminSiteMap {
                             SystemName = "Checkout attributes",
@@ -183,7 +202,8 @@ namespace Grand.Business.System.Utilities
                             ControllerName = "CheckoutAttribute",
                             ActionName = "List",
                             PermissionNames = new List<string> { PermissionSystemName.CheckoutAttributes },
-                            IconClass = "fa fa-dot-circle-o"
+                            IconClass = "fa fa-dot-circle-o",
+                            IsActive=false
                         },
                         new AdminSiteMap {
                             SystemName = "Order status",
@@ -191,7 +211,8 @@ namespace Grand.Business.System.Utilities
                             ControllerName = "OrderStatus",
                             PermissionNames = new List<string> { PermissionSystemName.OrderStatus },
                             ActionName = "Index",
-                            IconClass = "fa fa-dot-circle-o"
+                            IconClass = "fa fa-dot-circle-o",
+                            IsActive=true
                         },
 
                     }
@@ -209,7 +230,8 @@ namespace Grand.Business.System.Utilities
                             PermissionNames = new List<string> { PermissionSystemName.Customers },
                             ControllerName = "Customer",
                             ActionName = "List",
-                            IconClass = "fa fa-dot-circle-o"
+                            IconClass = "fa fa-dot-circle-o",
+                            IsActive=true
                         },
                         new AdminSiteMap {
                             SystemName = "Customer groups",
@@ -249,7 +271,8 @@ namespace Grand.Business.System.Utilities
                             PermissionNames = new List<string> { PermissionSystemName.SalesEmployees },
                             ControllerName = "SalesEmployee",
                             ActionName = "Index",
-                            IconClass = "fa fa-dot-circle-o"
+                            IconClass = "fa fa-dot-circle-o",
+                            IsActive=true
                         },
                         new AdminSiteMap {
                             SystemName = "Customer attributes",
@@ -273,7 +296,8 @@ namespace Grand.Business.System.Utilities
                             PermissionNames = new List<string> { PermissionSystemName.ActivityLog },
                             ControllerName = "ActivityLog",
                             ActionName = "ListLogs",
-                            IconClass = "fa fa-arrow-circle-o-right"
+                            IconClass = "fa fa-arrow-circle-o-right",
+                            IsActive=true
                         }
                     }
                 },
@@ -357,7 +381,7 @@ namespace Grand.Business.System.Utilities
                                     IconClass = "fa fa-dot-circle-o"
                                 }
                             }
-                        },                      
+                        },
                         new AdminSiteMap {
                             SystemName = "Customer actions",
                             ResourceName = "Admin.Customers.CustomerActions",

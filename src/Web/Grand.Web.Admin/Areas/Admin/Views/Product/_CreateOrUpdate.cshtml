@@ -23,13 +23,13 @@
                 </div>
             </content>
         </tabstrip-item>
-        <tabstrip-item text="@Loc["Admin.Catalog.Products.Additional"]" tab-index="2">
+        @*<tabstrip-item text="@Loc["Admin.Catalog.Products.Additional"]" tab-index="2">
             <content>
                 <div>
                     <partial name="_CreateOrUpdate.Additional" model="Model" />
                 </div>
             </content>
-        </tabstrip-item>
+        </tabstrip-item>*@
         <tabstrip-item text="@Loc["Admin.Common.SEO"]" tab-index="3">
             <content>
                 <div>
@@ -48,7 +48,7 @@
             <content>
                 <div>
                     <partial name="_CreateOrUpdate.Categories" model="Model" />
-                    <partial name="_CreateOrUpdate.Collections" model="Model" />
+                    @*<partial name="_CreateOrUpdate.Collections" model="Model" />*@
                 </div>
             </content>
         </tabstrip-item>
@@ -59,14 +59,14 @@
                 </div>
             </content>
         </tabstrip-item>
-        <tabstrip-item text="@Loc["Admin.Catalog.Products.SpecificationAttributes"]" tab-index="7">
+        @*<tabstrip-item text="@Loc["Admin.Catalog.Products.SpecificationAttributes"]" tab-index="7">
             <content>
                 <div>
                     <partial name="_CreateOrUpdate.SpecificationAttributes" model="Model" />
                 </div>
             </content>
-        </tabstrip-item>
-        <tabstrip-item text="@Loc["Admin.Catalog.Products.ProductAttributes"]" tab-index="8" id="tab-attributes-product">
+        </tabstrip-item>*@
+        @*<tabstrip-item text="@Loc["Admin.Catalog.Products.ProductAttributes"]" tab-index="8" id="tab-attributes-product">
             <content>
                 <div>
                     <partial name="_CreateOrUpdate.ProductAttributes" model="Model" />
@@ -93,8 +93,8 @@
                     <partial name="_CreateOrUpdate.Bids" model="Model" />
                 </div>
             </content>
-        </tabstrip-item>
-        <tabstrip-item text="@Loc["Admin.Catalog.Products.LinkedProducts"]" tab-index="12">
+        </tabstrip-item>*@
+        @*<tabstrip-item text="@Loc["Admin.Catalog.Products.LinkedProducts"]" tab-index="12">
             <content>
                 <div>
                     <partial name="_CreateOrUpdate.RelatedProducts" model="Model" />
@@ -103,14 +103,14 @@
                     <partial name="_CreateOrUpdate.Recommended" model="Model" />
                 </div>
             </content>
-        </tabstrip-item>
-        <tabstrip-item text="@Loc["Admin.Catalog.Products.AssociatedProducts"]" tab-index="13" id="tab-associated-products">
+        </tabstrip-item>*@
+        @*<tabstrip-item text="@Loc["Admin.Catalog.Products.AssociatedProducts"]" tab-index="13" id="tab-associated-products">
             <content>
                 <div>
                     <partial name="_CreateOrUpdate.AssociatedProducts" model="Model" />
                 </div>
             </content>
-        </tabstrip-item>
+        </tabstrip-item>*@
         @if (!String.IsNullOrEmpty(Model.Id))
         {
             <tabstrip-item text="@Loc["Admin.Catalog.Products.ActivityLog"]" tab-index="14">
@@ -120,7 +120,7 @@
                     </div>
                 </content>
             </tabstrip-item>
-            <tabstrip-item text="@Loc["Admin.Catalog.Products.PurchasedWithOrders"]" tab-index="15" id="tab-purchased-product">
+            @*<tabstrip-item text="@Loc["Admin.Catalog.Products.PurchasedWithOrders"]" tab-index="15" id="tab-purchased-product">
                 <content>
                     <div>
                         <partial name="_CreateOrUpdate.PurchasedWithOrders" model="Model" />
@@ -133,8 +133,8 @@
                         <partial name="_CreateOrUpdate.Reviews" model="Model" />
                     </div>
                 </content>
-            </tabstrip-item>
-            if (canManageDocuments)
+            </tabstrip-item>*@
+            @*if (canManageDocuments)
             {
                 <tabstrip-item text="@Loc["Admin.Catalog.Products.Documents"]" tab-index="17">
                     <content>
@@ -154,7 +154,7 @@
                         <partial name="_UserFields" model="Model" view-data="ViewData" />
                     </div>
                 </content>
-            </tabstrip-item>
+            </tabstrip-item>*@
         }
         <vc:admin-widget widget-zone="product_details_tabs" additional-data="Model" />
     </items>

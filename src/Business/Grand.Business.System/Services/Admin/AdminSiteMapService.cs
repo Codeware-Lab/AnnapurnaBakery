@@ -29,7 +29,7 @@ namespace Grand.Business.System.Services.Admin
                 var query = from c in _adminSiteMapRepository.Table
                             select c;
 
-                var list = query.ToList();
+                var list = query.Where(x => x.IsActive).ToList();
                 if (list.Any())
                     return list;
                 else

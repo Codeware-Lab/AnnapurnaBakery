@@ -62,5 +62,6 @@ namespace Grand.Domain.Admin
         /// Gets or sets all permissions
         /// </summary>
         public bool AllPermissions { get; set; }
+        public bool IsActive { get; set; }
     }
 }

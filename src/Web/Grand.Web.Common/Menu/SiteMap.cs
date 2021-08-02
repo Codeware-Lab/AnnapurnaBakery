@@ -41,9 +41,12 @@ namespace Grand.Web.Common.Menu
             {
                 foreach (var item in adminSiteMaps)
                 {
-                    var mainsite = new SiteMapNode();
-                    siteMap.ChildNodes.Add(mainsite);
-                    await Iterate(mainsite, item);
+                    if (item.IsActive)
+                    {
+                        var mainsite = new SiteMapNode();
+                        siteMap.ChildNodes.Add(mainsite);
+                        await Iterate(mainsite, item);
+                    }
                 }
             }
             RootNode = siteMap;
@@ -55,9 +58,12 @@ namespace Grand.Web.Common.Menu
 
             foreach (var item in siteMapNode.ChildNodes)
             {
-                var mainsite = new SiteMapNode();
-                siteMap.ChildNodes.Add(mainsite);
-                await Iterate(mainsite, item);
+                if (item.IsActive)
+                {
+                    var mainsite = new SiteMapNode();
+                    siteMap.ChildNodes.Add(mainsite);
+                    await Iterate(mainsite, item);
+                }
             }
         }
 
