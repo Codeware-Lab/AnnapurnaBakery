@@ -12,7 +12,7 @@
                 <span asp-validation-for="ManageInventoryMethodId"></span>
             </div>
         </div>
-        <div class="form-group" id="pnlUseMultipleWarehouses">
+        @*<div class="form-group" id="pnlUseMultipleWarehouses">
             <admin-label asp-for="UseMultipleWarehouses" />
             <div class="col-md-9 col-sm-9">
                 <label class="mt-checkbox mt-checkbox-outline control control-checkbox">
@@ -21,7 +21,7 @@
                 </label>
                 <span asp-validation-for="UseMultipleWarehouses"></span>
             </div>
-        </div>
+        </div>*@
         <div class="form-group" id="pnlWarehouse">
             <admin-label asp-for="WarehouseId" />
             <div class="col-md-9 col-sm-9">
@@ -111,7 +111,7 @@
                 <span asp-validation-for="ReservedQuantity"></span>
             </div>
         </div>
-        <div class="form-group" id="pnlDisplayStockAvailability">
+        @*<div class="form-group" id="pnlDisplayStockAvailability">
             <admin-label asp-for="StockAvailability" />
             <div class="col-md-9 col-sm-9">
                 <label class="mt-checkbox mt-checkbox-outline control control-checkbox">
@@ -120,8 +120,8 @@
                 </label>
                 <span asp-validation-for="StockAvailability"></span>
             </div>
-        </div>
-        <div class="form-group" id="pnlDisplayStockQuantity">
+        </div>*@
+        @*<div class="form-group" id="pnlDisplayStockQuantity">
             <admin-label asp-for="DisplayStockQuantity" />
             <div class="col-md-9 col-sm-9">
                 <label class="mt-checkbox mt-checkbox-outline control control-checkbox">
@@ -130,8 +130,8 @@
                 </label>
                 <span asp-validation-for="DisplayStockQuantity"></span>
             </div>
-        </div>
-        <div class="form-group" id="pnlMinStockQuantity">
+        </div>*@
+        @*<div class="form-group" id="pnlMinStockQuantity">
             <admin-label asp-for="MinStockQuantity" />
             <div class="col-md-9 col-sm-9">
                 <admin-input asp-for="MinStockQuantity" />
@@ -151,8 +151,8 @@
                 <admin-input asp-for="NotifyAdminForQuantityBelow" />
                 <span asp-validation-for="NotifyAdminForQuantityBelow"></span>
             </div>
-        </div>
-        <div class="form-group" id="pnlBackorders">
+        </div>*@
+        @*<div class="form-group" id="pnlBackorders">
             <admin-label asp-for="BackorderModeId" />
             <div class="col-md-9 col-sm-9">
                 <admin-select asp-for="BackorderModeId" asp-items="((BackorderMode)Model.BackorderModeId).ToSelectList(Context)" />
@@ -168,8 +168,8 @@
                 </label>
                 <span asp-validation-for="AllowOutOfStockSubscriptions"></span>
             </div>
-        </div>
-        <div class="form-group">
+        </div>*@
+        @*<div class="form-group">
             <admin-label asp-for="OrderMinimumQuantity" />
             <div class="col-md-9 col-sm-9">
                 <admin-input asp-for="OrderMinimumQuantity" />
@@ -189,8 +189,8 @@
                 <admin-input asp-for="AllowedQuantities" />
                 <span asp-validation-for="AllowedQuantities"></span>
             </div>
-        </div>
-        <div class="form-group">
+        </div>*@
+        @*<div class="form-group">
             <admin-label asp-for="NotReturnable" />
             <div class="col-md-9 col-sm-9">
                 <label class="mt-checkbox mt-checkbox-outline control control-checkbox">
@@ -199,10 +199,10 @@
                 </label>
                 <span asp-validation-for="NotReturnable"></span>
             </div>
-        </div>
+        </div>*@
     </div>
 </div>
-<div class="form-horizontal portlet bg-inverse form-fit" id="group-shipping">
+@*<div class="form-horizontal portlet bg-inverse form-fit" id="group-shipping">
     <div class="form-body">
         <div class="form-group">
             <admin-label asp-for="IsShipEnabled" />
@@ -277,5 +277,5 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@
 <vc:admin-widget widget-zone="product_details_inventory_bottom" additional-data="Model" />

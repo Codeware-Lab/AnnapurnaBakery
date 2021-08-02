@@ -501,7 +501,7 @@
                 <span asp-validation-for="ProductTypeId"></span>
             </div>
         </div>
-        <div class="form-group">
+        @*<div class="form-group">
             <admin-label asp-for="VisibleIndividually" />
             <div class="col-md-9 col-sm-9">
                 <label class="mt-checkbox mt-checkbox-outline control control-checkbox">
@@ -510,8 +510,8 @@
                 </label>
                 <span asp-validation-for="VisibleIndividually"></span>
             </div>
-        </div>
-        @if (!string.IsNullOrEmpty(Model.Id) && !string.IsNullOrEmpty(Model.AssociatedToProductId))
+        </div>*@
+        @*@if (!string.IsNullOrEmpty(Model.Id) && !string.IsNullOrEmpty(Model.AssociatedToProductId))
         {
             <div class="form-group">
                 <admin-label asp-for="AssociatedToProductId" />
@@ -521,7 +521,7 @@
                     </label>
                 </div>
             </div>
-        }
+        }*@
         <div class="form-group">
             <admin-label asp-for="ProductLayoutId" />
             <div class="col-md-9 col-sm-9">
@@ -585,28 +585,28 @@
     </localized-editor>
 
     <div class="form-body">
-        <div class="form-group">
+        @*<div class="form-group">
             <admin-label asp-for="Flag" />
             <div class="col-md-9 col-sm-9">
                 <admin-input asp-for="Flag" />
                 <span asp-validation-for="Flag"></span>
             </div>
-        </div>
-        <div class="form-group">
+        </div>*@
+        @*<div class="form-group">
             <admin-label asp-for="AdminComment" />
             <div class="col-md-9 col-sm-9">
                 <admin-textarea asp-for="AdminComment"></admin-textarea>
                 <span asp-validation-for="AdminComment"></span>
             </div>
-        </div>
-        <div class="form-group">
+        </div>*@
+        @*<div class="form-group">
             <admin-label asp-for="BrandId" />
             <div class="col-md-9 col-sm-9">
                 <admin-input asp-for="BrandId" />
                 <span asp-validation-for="BrandId"></span>
             </div>
-        </div>
-        <div class="form-group" @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
+        </div>*@
+        @*<div class="form-group" @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
             <admin-label asp-for="VendorId" />
             <div class="col-md-9 col-sm-9">
                 <admin-input asp-for="VendorId" />
@@ -622,7 +622,7 @@
                 </label>
                 <span asp-validation-for="ShowOnHomePage"></span>
             </div>
-        </div>
+        </div>*@
         <div class="form-group" id="pnlDisplayOrder" @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
             <admin-label asp-for="DisplayOrder" />
             <div class="col-md-9 col-sm-9">
@@ -630,7 +630,7 @@
                 <span asp-validation-for="DisplayOrder"></span>
             </div>
         </div>
-        <div class="form-group" @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
+        @*<div class="form-group" @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
             <admin-label asp-for="BestSeller" />
             <div class="col-md-9 col-sm-9">
                 <label class="mt-checkbox mt-checkbox-outline control control-checkbox">
@@ -649,8 +649,8 @@
                 </label>
                 <span asp-validation-for="AllowCustomerReviews"></span>
             </div>
-        </div>
-        <div class="form-group">
+        </div>*@
+        @*<div class="form-group">
             <admin-label asp-for="ProductTags" />
             <div class="col-md-9 col-sm-9">
                 <admin-input asp-for="ProductTags" />
@@ -670,8 +670,8 @@
                 <admin-input asp-for="Mpn" />
                 <span asp-validation-for="Mpn"></span>
             </div>
-        </div>
-        <div class="form-group">
+        </div>*@
+        @*<div class="form-group">
             <admin-label asp-for="Gtin" />
             <div class="col-md-9 col-sm-9">
                 <admin-input asp-for="Gtin" />
@@ -684,19 +684,19 @@
                 <admin-input asp-for="CustomerGroups" />
                 <span asp-validation-for="CustomerGroups"></span>
             </div>
-        </div>
-        <div class="form-group">
+        </div>*@
+        @*<div class="form-group">
             <admin-label asp-for="Stores" />
             <div class="col-md-9 col-sm-9">
                 <admin-input asp-for="Stores" />
                 <span asp-validation-for="Stores"></span>
             </div>
-        </div>
+        </div>*@
     </div>
 </div>
 <div class="form-horizontal">
     <div class="form-body">
-        <div class="form-group">
+        @*<div class="form-group">
             <admin-label asp-for="AvailableStartDateTime" />
             <div class="col-md-9 col-sm-9">
                 <admin-input asp-for="AvailableStartDateTime" />
@@ -709,8 +709,8 @@
                 <admin-input asp-for="AvailableEndDateTime" />
                 <span asp-validation-for="AvailableEndDateTime"></span>
             </div>
-        </div>
-        <div class="form-group">
+        </div>*@
+        @*<div class="form-group">
             <admin-label asp-for="MarkAsNew" />
             <div class="col-md-9 col-sm-9">
                 <label class="mt-checkbox mt-checkbox-outline control control-checkbox">
@@ -733,7 +733,7 @@
                 <admin-input asp-for="MarkAsNewEndDateTime" />
                 <span asp-validation-for="MarkAsNewEndDateTime"></span>
             </div>
-        </div>
+        </div>*@
         <div class="form-group">
             <admin-label asp-for="Published" />
             <div class="col-md-9 col-sm-9">
