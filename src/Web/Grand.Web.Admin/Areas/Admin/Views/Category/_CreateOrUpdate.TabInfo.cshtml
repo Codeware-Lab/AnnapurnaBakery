@@ -45,21 +45,21 @@
                     <span asp-validation-for="@Model.Locales[item].Description"></span>
                 </div>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <admin-label asp-for="@Model.Locales[item].BottomDescription" />
                 <div class="col-md-9 col-sm-9">
                     <admin-input asp-for="@Model.Locales[item].BottomDescription" asp-template="Editor" />
                     <span asp-validation-for="@Model.Locales[item].BottomDescription"></span>
                 </div>
-            </div>
-            <div class="form-group">
+            </div>*@
+            @*<div class="form-group">
                 <admin-label asp-for="@Model.Locales[item].Flag" />
                 <div class="col-md-9 col-sm-9">
                     <admin-input asp-for="@Model.Locales[item].Flag" />
                     <span asp-validation-for="@Model.Locales[item].Flag"></span>
                 </div>
             </div>
-            <input type="hidden" asp-for="@Model.Locales[item].LanguageId" />
+            <input type="hidden" asp-for="@Model.Locales[item].LanguageId" />*@
         </div>;
  }
 <div class="form-horizontal">
@@ -80,23 +80,23 @@
                     <span asp-validation-for="Description"></span>
                 </div>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <admin-label asp-for="BottomDescription" />
                 <div class="col-md-9 col-sm-9">
                     <admin-input asp-for="BottomDescription" asp-template="Editor" />
                     <span asp-validation-for="BottomDescription"></span>
                 </div>
-            </div>
-            <div class="form-group">
+            </div>*@
+            @*<div class="form-group">
                 <admin-label asp-for="Flag" />
                 <div class="col-md-9 col-sm-9">
                     <admin-input asp-for="Flag" />
                     <span asp-validation-for="Flag"></span>
                 </div>
-            </div>
+            </div>*@
         </div>
     </localized-editor>
-    <div class="form-group">
+    @*<div class="form-group">
         <admin-label asp-for="CustomerGroups" />
         <div class="col-md-9 col-sm-9">
             <admin-input asp-for="CustomerGroups" />
@@ -116,22 +116,22 @@
             <admin-input asp-for="FlagStyle" />
             <span asp-validation-for="FlagStyle"></span>
         </div>
-    </div>
-    <div class="form-group">
+    </div>*@
+    @*<div class="form-group">
         <admin-label asp-for="Icon" />
         <div class="col-md-9 col-sm-9">
             <admin-input asp-for="Icon" />
             <span asp-validation-for="Icon"></span>
         </div>
-    </div>
+    </div>*@
     <div class="form-body">
-        <div class="form-group">
+        @*<div class="form-group">
             <admin-label asp-for="CategoryLayoutId" />
             <div class="col-md-9 col-sm-9">
                 <admin-select asp-for="CategoryLayoutId" asp-items="Model.AvailableCategoryLayouts" />
                 <span asp-validation-for="CategoryLayoutId"></span>
             </div>
-        </div>
+        </div>*@
         <div class="form-group">
             @{
                 ViewData["Reference"] = "Category";
@@ -150,7 +150,7 @@
                 <span asp-validation-for="ParentCategoryId"></span>
             </div>
         </div>
-        <div class="form-group">
+        @*<div class="form-group">
             <admin-label asp-for="ShowOnHomePage" />
             <div class="col-md-9 col-sm-9">
                 <label class="mt-checkbox mt-checkbox-outline control control-checkbox">
@@ -226,7 +226,7 @@
                 <admin-select asp-for="DefaultSort" asp-items="Model.AvailableSortOptions" />
                 <span asp-validation-for="DefaultSort"></span>
             </div>
-        </div>
+        </div>*@
         <div class="form-group">
             <admin-label asp-for="Published" />
             <div class="col-md-9 col-sm-9">
@@ -244,7 +244,7 @@
                 <span asp-validation-for="DisplayOrder"></span>
             </div>
         </div>
-        <div class="form-group">
+        @*<div class="form-group">
             <admin-label asp-for="HideOnCatalog" />
             <div class="col-md-9 col-sm-9">
                 <label class="mt-checkbox mt-checkbox-outline control control-checkbox">
@@ -260,7 +260,7 @@
                 <admin-input asp-for="ExternalId" />
                 <span asp-validation-for="ExternalId"></span>
             </div>
-        </div>
+        </div>*@
     </div>
 </div>
 <vc:admin-widget widget-zone="category_details_info_bottom" additional-data="Model" />

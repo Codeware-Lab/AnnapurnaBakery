@@ -86,14 +86,14 @@
                     <span asp-validation-for="CustomerGroups"></span>
                 </div>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <admin-label asp-for="CustomerTags" />
                 <div class="col-md-9 col-sm-9">
                     <admin-input asp-for="CustomerTags" />
                     <span asp-validation-for="CustomerTags"></span>
                 </div>
-            </div>
-            @if (!String.IsNullOrEmpty(Model.Id) && Model.AssociatedExternalAuthRecords.Count > 0)
+            </div>*@
+            @*@if (!String.IsNullOrEmpty(Model.Id) && Model.AssociatedExternalAuthRecords.Count > 0)
             {
                 <div class="form-group">
                     <admin-label asp-for="AssociatedExternalAuthRecords" />
@@ -212,7 +212,7 @@
                         </div>
                     </div>
                 </div>
-            }
+            }*@
             <div class="form-group">
                 <admin-label asp-for="FirstName" />
                 <div class="col-md-9 col-sm-9">
@@ -227,7 +227,7 @@
                     <span asp-validation-for="LastName"></span>
                 </div>
             </div>
-            @if (Model.DateOfBirthEnabled)
+            @*@if (Model.DateOfBirthEnabled)
             {
                 <div class="form-group">
                     <admin-label asp-for="DateOfBirth" />
@@ -246,7 +246,7 @@
                         <span asp-validation-for="Company"></span>
                     </div>
                 </div>
-            }
+            }*@
             @if (Model.StreetAddressEnabled)
             {
                 <div class="form-group">
@@ -317,7 +317,7 @@
                     </div>
                 </div>
             }
-            @if (Model.FaxEnabled)
+            @*@if (Model.FaxEnabled)
             {
                 <div class="form-group">
                     <admin-label asp-for="Fax" />
@@ -379,8 +379,8 @@
                         <button type="submit" name="remove-affiliate" asp-action="RemoveAffiliate" class="k-button red"><span class="k-icon k-i-delete"></span>&nbsp;@Loc["Admin.Customers.Customers.Fields.Affiliate.Remove"]</button>
                     </div>
                 </div>
-            }
-            @if (Model.DisplayVatNumber)
+            }*@
+            @*@if (Model.DisplayVatNumber)
             {
                 <div class="form-group">
                     <admin-label asp-for="VatNumber" />
@@ -421,7 +421,7 @@
                 <div class="note note-info">
                     @Loc["Admin.Customers.Customers.Fields.CustomerGroups.NoGroups"]
                 </div>
-            }
+            }*@
             <div class="form-group">
                 <admin-label asp-for="Active" />
                 <div class="col-md-9 col-sm-9">
@@ -441,7 +441,7 @@
                     </div>
                 </div>
             }
-            @if (!String.IsNullOrEmpty(Model.Id) && !String.IsNullOrEmpty(Model.UrlReferrer))
+            @*@if (!String.IsNullOrEmpty(Model.Id) && !String.IsNullOrEmpty(Model.UrlReferrer))
             {
                 <div class="form-group">
                     <admin-label asp-for="UrlReferrer" />
@@ -449,7 +449,7 @@
                         <label class="control-label">@Model.UrlReferrer</label>
                     </div>
                 </div>
-            }
+            }*@
             @if (!String.IsNullOrEmpty(Model.Id))
             {
                 <div class="form-group">
@@ -468,7 +468,7 @@
                     </div>
                 </div>
             }
-            @if (!String.IsNullOrEmpty(Model.Id) && !String.IsNullOrEmpty(Model.LastVisitedPage))
+            @*@if (!String.IsNullOrEmpty(Model.Id) && !String.IsNullOrEmpty(Model.LastVisitedPage))
             {
                 <div class="form-group">
                     <admin-label asp-for="LastVisitedPage" />
@@ -494,7 +494,7 @@
                         <label class="control-label">@Model.LastPurchaseDate</label>
                     </div>
                 </div>
-            }
+            }*@
         </div>
         <vc:admin-widget widget-zone="customer_details_info_bottom" additional-data="Model" />
     </div>

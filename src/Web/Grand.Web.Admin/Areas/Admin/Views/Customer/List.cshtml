@@ -88,7 +88,7 @@
                                             <admin-input asp-for="SearchLastName" />
                                         </div>
                                     </div>
-                                    @if (Model.CompanyEnabled)
+                                    @*@if (Model.CompanyEnabled)
                                     {
                                         <div class="form-group">
                                             <admin-label asp-for="SearchCompany" class="col-sm-3 control-label" />
@@ -108,7 +108,7 @@
                                         <div class="col-md-9 col-sm-9">
                                             <admin-input asp-for="SearchCustomerTagIds" asp-template="MultiSelect" asp-selectitem="Model.AvailableCustomerTags" />
                                         </div>
-                                    </div>
+                                    </div>*@
                                     @if (Model.PhoneEnabled)
                                     {
                                         <div class="form-group">
@@ -118,7 +118,7 @@
                                             </div>
                                         </div>
                                     }
-                                    @if (Model.ZipPostalCodeEnabled)
+                                    @*@if (Model.ZipPostalCodeEnabled)
                                     {
                                         <div class="form-group">
                                             <admin-label asp-for="SearchZipPostalCode" class="col-sm-3 control-label" />
@@ -126,7 +126,7 @@
                                                 <admin-input asp-for="SearchZipPostalCode" />
                                             </div>
                                         </div>
-                                    }
+                                    }*@
                                 </div>
                             </div>
                         </div>
@@ -207,7 +207,8 @@
                             title: "@Loc["Admin.Customers.Customers.Fields.FullName"]",
                             width: 200,
                             encoded: true,
-                        }, {
+                        },
+                        @*{
                             field: "CustomerGroupNames",
                             title: "@Loc["Admin.Customers.Customers.Fields.CustomerGroups"]",
                             width: 200
@@ -221,7 +222,7 @@
                             width: 200,
                             minScreenWidth: 770,
                             },</text>
-                        }
+                        }*@
 /**/
                         @if (Model.PhoneEnabled)
                         {
@@ -233,7 +234,7 @@
                             },</text>
                         }
 /**/
-                        @if (Model.ZipPostalCodeEnabled)
+                        @*@if (Model.ZipPostalCodeEnabled)
                         {
                             <text>{
                             field: "ZipPostalCode",
@@ -241,7 +242,7 @@
                             width: 200,
                             minScreenWidth: 770,
                             },</text>
-                        }
+                        }*@
                     {
                         field: "Active",
                         title: "@Loc["Admin.Customers.Customers.Fields.Active"]",
