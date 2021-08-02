@@ -48,13 +48,13 @@
                     </div>
                 </content>
             </tabstrip-item>
-            <tabstrip-item text="@Loc["Admin.Customers.Customers.Reviews"]" tab-index="2">
+            @*<tabstrip-item text="@Loc["Admin.Customers.Customers.Reviews"]" tab-index="2">
                 <content>
                     <div>
                         <partial name="_CreateOrUpdate.TabReviews" model="Model" />
                     </div>
                 </content>
-            </tabstrip-item>
+            </tabstrip-item>*@
             <tabstrip-item text="@Loc["Admin.Customers.Customers.Addresses"]" tab-index="3">
                 <content>
                     <div>
@@ -62,29 +62,29 @@
                     </div>
                 </content>
             </tabstrip-item>
-            <tabstrip-item text="@Loc["Admin.Customers.Customers.ShoppingCartWishlist"]" tab-index="4">
+            @*<tabstrip-item text="@Loc["Admin.Customers.Customers.ShoppingCartWishlist"]" tab-index="4">
                 <content>
                     <div>
                         <partial name="_CreateOrUpdate.TabCurrentShoppingCart" model="Model" />
                         <partial name="_CreateOrUpdate.TabCurrentWishlist" model="Model" />
                     </div>
                 </content>
-            </tabstrip-item>
-            <tabstrip-item text="@Loc["Admin.Customers.Customers.PersonalizedProduct"]" tab-index="5">
+            </tabstrip-item>*@
+            @*<tabstrip-item text="@Loc["Admin.Customers.Customers.PersonalizedProduct"]" tab-index="5">
                 <content>
                     <div>
                         <partial name="_CreateOrUpdate.TabProduct" model="Model" />
                         <partial name="_CreateOrUpdate.TabProductPrice" model="Model" />
                     </div>
                 </content>
-            </tabstrip-item>
-            <tabstrip-item text="@Loc["Admin.Customers.Customers.CustomerNotes"]" tab-index="6">
+            </tabstrip-item>*@
+            @*<tabstrip-item text="@Loc["Admin.Customers.Customers.CustomerNotes"]" tab-index="6">
                 <content>
                     <div>
                         <partial name="_CreateOrUpdate.TabNotes" model="Model" />
                     </div>
                 </content>
-            </tabstrip-item>
+            </tabstrip-item>*@
             <tabstrip-item text="@Loc["Admin.Customers.Customers.ActivityLog"]" tab-index="7">
                 <content>
                     <div>
@@ -92,14 +92,14 @@
                     </div>
                 </content>
             </tabstrip-item>
-            <tabstrip-item text="@Loc["Admin.Customers.Customers.OutOfStockSubscriptions"]" tab-index="8">
+            @*<tabstrip-item text="@Loc["Admin.Customers.Customers.OutOfStockSubscriptions"]" tab-index="8">
                 <content>
                     <div>
                         <partial name="_CreateOrUpdate.TabOutOfStockSubscriptions" model="Model" />
                     </div>
                 </content>
-            </tabstrip-item>
-            @if (Model.DisplayLoyaltyPointsHistory)
+            </tabstrip-item>*@
+            @*@if (Model.DisplayLoyaltyPointsHistory)
             {
                 <tabstrip-item text="@Loc["Admin.Customers.Customers.LoyaltyPoints"]" tab-index="9">
                     <content>
@@ -118,7 +118,7 @@
                         </div>
                     </content>
                 </tabstrip-item>
-            }
+            }*@
         }
         <vc:admin-widget widget-zone="customer_details_tabs" additional-data="Model" />
     </items>
