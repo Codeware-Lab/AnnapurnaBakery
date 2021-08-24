@@ -256,12 +256,12 @@ namespace Grand.Web.Admin.Controllers
             foreach (var customerGroup in allCustomerGroups)
                 if (model.CustomerGroups != null && model.CustomerGroups.Contains(customerGroup.Id))
                     newCustomerGroups.Add(customerGroup);
-            var customerGroupsError = await _customerViewModelService.ValidateCustomerGroups(newCustomerGroups);
-            if (!string.IsNullOrEmpty(customerGroupsError))
-            {
-                ModelState.AddModelError("", customerGroupsError);
-                Error(customerGroupsError, false);
-            }
+            //var customerGroupsError = await _customerViewModelService.ValidateCustomerGroups(newCustomerGroups);
+            //if (!string.IsNullOrEmpty(customerGroupsError))
+            //{
+            //    ModelState.AddModelError("", customerGroupsError);
+            //    Error(customerGroupsError, false);
+            //}
 
             if (model.TwoFactorEnabled)
                 Warning(_translationService.GetResource("Admin.Customers.Customers.CannotTwoFactorEnabled"));
@@ -341,12 +341,12 @@ namespace Grand.Web.Admin.Controllers
                 if (model.CustomerGroups != null && model.CustomerGroups.Contains(customerGroup.Id))
                     newCustomerGroups.Add(customerGroup);
 
-            var customerGroupsError = await _customerViewModelService.ValidateCustomerGroups(newCustomerGroups);
-            if (!string.IsNullOrEmpty(customerGroupsError))
-            {
-                ModelState.AddModelError("", customerGroupsError);
-                Error(customerGroupsError, false);
-            }
+            //var customerGroupsError = await _customerViewModelService.ValidateCustomerGroups(newCustomerGroups);
+            //if (!string.IsNullOrEmpty(customerGroupsError))
+            //{
+            //    ModelState.AddModelError("", customerGroupsError);
+            //    Error(customerGroupsError, false);
+            //}
             if (!string.IsNullOrWhiteSpace(model.Owner))
             {
                 var custowner = await _customerService.GetCustomerByEmail(model.Owner);

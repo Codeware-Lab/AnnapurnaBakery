@@ -6,7 +6,7 @@
 }
 
 <form asp-area="@Constants.AreaAdmin" asp-controller="Customer" asp-action="List" method="post">
-    
+
     <div class="row">
         <div class="col-md-12">
             <div class="x_panel light form-fit popup-window">
@@ -45,11 +45,34 @@
                         <div class="form-body">
                             <div class="main-header col-12 px-0">
                                 <div class="row align-items-end">
-                                    <div class="col-md-8 col-ms-12 col-12">
-                                        <div class="form-group mb-0">
-                                            <admin-label asp-for="SearchEmail" class="control-label" />
-                                            <admin-input asp-for="SearchEmail" />
+                                    @*<div class="col-md-8 col-ms-12 col-12">
+                                            <div class="form-group mb-0">
+                                                <admin-label asp-for="SearchEmail" class="control-label" />
+                                                <admin-input asp-for="SearchEmail" />
+                                            </div>
+                                        </div>*@
+                                    <div class="col-md-8 col-ms-3 col-3">
+                                        <div class="form-group">
+                                            <admin-label asp-for="SearchFirstName" class="col-sm-3 control-label" />
+                                            <div class="col-md-9 col-sm-9">
+                                                <admin-input asp-for="SearchFirstName" />
+                                            </div>
                                         </div>
+                                        <div class="form-group">
+                                            <admin-label asp-for="SearchLastName" class="col-sm-3 control-label" />
+                                            <div class="col-md-9 col-sm-9">
+                                                <admin-input asp-for="SearchLastName" />
+                                            </div>
+                                        </div>
+                                        @if (Model.PhoneEnabled)
+                                        {
+                                            <div class="form-group">
+                                                <admin-label asp-for="SearchPhone" class="col-sm-3 control-label" />
+                                                <div class="col-md-9 col-sm-9">
+                                                    <admin-input asp-for="SearchPhone" />
+                                                </div>
+                                            </div>
+                                        }
                                     </div>
                                     <div class="col-md-4 col-sm-12 col-12">
                                         <div class="form-actions">
@@ -57,9 +80,9 @@
                                                 <button class="btn btn-success filter-submit" id="search-customers">
                                                     <i class="fa fa-search"></i>&nbsp; @Loc["Admin.Common.Search"]
                                                 </button>
-                                                <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse">
+                                                @*<button class="btn btn-info" type="button" data-toggle="collapse" data-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse">
                                                     <i class="fa fa-filter"></i>&nbsp; @Loc["Admin.Common.Filters"]
-                                                </button>
+                                                </button>*@
                                             </div>
                                         </div>
                                     </div>
@@ -76,39 +99,28 @@
                                             </div>
                                         </div>
                                     }
-                                    <div class="form-group">
-                                        <admin-label asp-for="SearchFirstName" class="col-sm-3 control-label" />
-                                        <div class="col-md-9 col-sm-9">
-                                            <admin-input asp-for="SearchFirstName" />
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <admin-label asp-for="SearchLastName" class="col-sm-3 control-label" />
-                                        <div class="col-md-9 col-sm-9">
-                                            <admin-input asp-for="SearchLastName" />
-                                        </div>
-                                    </div>
+
                                     @*@if (Model.CompanyEnabled)
-                                    {
+                                        {
+                                            <div class="form-group">
+                                                <admin-label asp-for="SearchCompany" class="col-sm-3 control-label" />
+                                                <div class="col-md-9 col-sm-9">
+                                                    <admin-input asp-for="SearchCompany" />
+                                                </div>
+                                            </div>
+                                        }
                                         <div class="form-group">
-                                            <admin-label asp-for="SearchCompany" class="col-sm-3 control-label" />
+                                            <admin-label asp-for="SearchCustomerGroupIds" class="col-sm-3 control-label" />
                                             <div class="col-md-9 col-sm-9">
-                                                <admin-input asp-for="SearchCompany" />
+                                                <admin-input asp-for="SearchCustomerGroupIds" asp-template="MultiSelect" asp-selectitem="Model.AvailableCustomerGroups" />
                                             </div>
                                         </div>
-                                    }
-                                    <div class="form-group">
-                                        <admin-label asp-for="SearchCustomerGroupIds" class="col-sm-3 control-label" />
-                                        <div class="col-md-9 col-sm-9">
-                                            <admin-input asp-for="SearchCustomerGroupIds" asp-template="MultiSelect" asp-selectitem="Model.AvailableCustomerGroups" />
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <admin-label asp-for="SearchCustomerTagIds" class="col-sm-3 control-label" />
-                                        <div class="col-md-9 col-sm-9">
-                                            <admin-input asp-for="SearchCustomerTagIds" asp-template="MultiSelect" asp-selectitem="Model.AvailableCustomerTags" />
-                                        </div>
-                                    </div>*@
+                                        <div class="form-group">
+                                            <admin-label asp-for="SearchCustomerTagIds" class="col-sm-3 control-label" />
+                                            <div class="col-md-9 col-sm-9">
+                                                <admin-input asp-for="SearchCustomerTagIds" asp-template="MultiSelect" asp-selectitem="Model.AvailableCustomerTags" />
+                                            </div>
+                                        </div>*@
                                     @if (Model.PhoneEnabled)
                                     {
                                         <div class="form-group">
@@ -119,14 +131,14 @@
                                         </div>
                                     }
                                     @*@if (Model.ZipPostalCodeEnabled)
-                                    {
-                                        <div class="form-group">
-                                            <admin-label asp-for="SearchZipPostalCode" class="col-sm-3 control-label" />
-                                            <div class="col-md-9 col-sm-9">
-                                                <admin-input asp-for="SearchZipPostalCode" />
+                                        {
+                                            <div class="form-group">
+                                                <admin-label asp-for="SearchZipPostalCode" class="col-sm-3 control-label" />
+                                                <div class="col-md-9 col-sm-9">
+                                                    <admin-input asp-for="SearchZipPostalCode" />
+                                                </div>
                                             </div>
-                                        </div>
-                                    }*@
+                                        }*@
                                 </div>
                             </div>
                         </div>
@@ -188,20 +200,7 @@
                             attributes: { style: "text-align:center" },
                             template: "<label class='mt-checkbox mt-checkbox-outline control control-checkbox mt-NoMargin'><input type='checkbox' value='#=Id#' class='checkboxGroups'/><div class='control__indicator control__indicator_customers mt-NoMargin'></div></label>",
                             width: 40
-                        }, {
-                            field: "Email",
-                            title: "@Loc["Admin.Customers.Customers.Fields.Email"]",
-                            width: 200,
-                            template: '<a class="k-link" href="Edit/#=Id#">#=Email#</a>',
                         },
-                        @if (Model.UsernamesEnabled)
-                        {
-                            <text>{
-                                field: "Username",
-                                title: "@Loc["Admin.Customers.Customers.Fields.Username"]",
-                                width: 200
-                            },</text>
-                        }
                         {
                             field: "FullName",
                             title: "@Loc["Admin.Customers.Customers.Fields.FullName"]",
@@ -442,7 +441,7 @@
     </script>
 </form>
 <form asp-area="@Constants.AreaAdmin" asp-controller="Customer" asp-action="ExportXmlSelected" method="post" id="export-xml-selected-form">
-    
+
     <input type="hidden" id="selectedIds" name="selectedIds" value="" />
 </form>
 
@@ -459,7 +458,7 @@
 
 </script>
 <form asp-area="@Constants.AreaAdmin" asp-controller="Customer" asp-action="ExportExcelSelected" method="post" id="export-excel-selected-form">
-    
+
     <input type="hidden" id="selectedIds" name="selectedIds" value="" />
 </form>
 

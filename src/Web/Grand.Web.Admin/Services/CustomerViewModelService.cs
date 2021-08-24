@@ -618,34 +618,38 @@ namespace Grand.Web.Admin.Services
                 customer != null &&
                 !string.IsNullOrEmpty(customer.Email) &&
                 !customer.Active;
+            if (string.IsNullOrWhiteSpace(model.Email))
+            {
+                model.Email = DateTime.Now.ToString("yyyyMMdd HH: mm:ss") + "@grr.la";
+            }
         }
 
-        public virtual async Task<string> ValidateCustomerGroups(IList<CustomerGroup> customerGroups)
-        {
-            if (customerGroups == null)
-                throw new ArgumentNullException(nameof(customerGroups));
+        //public virtual async Task<string> ValidateCustomerGroups(IList<CustomerGroup> customerGroups)
+        //{
+        //    if (customerGroups == null)
+        //        throw new ArgumentNullException(nameof(customerGroups));
 
-            //ensure a customer is not added to both 'Guests' and 'Registered' customer groups
-            //ensure that a customer is in at least one required role ('Guests' and 'Registered')
-            var isInGuestsGroup = customerGroups.FirstOrDefault(cr => cr.SystemName == SystemCustomerGroupNames.Guests) != null;
-            var isInRegisteredGroup = customerGroups.FirstOrDefault(cr => cr.SystemName == SystemCustomerGroupNames.Registered) != null;
-            var isAdminGroup = customerGroups.FirstOrDefault(cr => cr.SystemName == SystemCustomerGroupNames.Administrators) != null;
+        //    //ensure a customer is not added to both 'Guests' and 'Registered' customer groups
+        //    //ensure that a customer is in at least one required role ('Guests' and 'Registered')
+        //    var isInGuestsGroup = customerGroups.FirstOrDefault(cr => cr.SystemName == SystemCustomerGroupNames.Guests) != null;
+        //    var isInRegisteredGroup = customerGroups.FirstOrDefault(cr => cr.SystemName == SystemCustomerGroupNames.Registered) != null;
+        //    var isAdminGroup = customerGroups.FirstOrDefault(cr => cr.SystemName == SystemCustomerGroupNames.Administrators) != null;
 
-            if (isInGuestsGroup && isInRegisteredGroup)
-                return "The customer cannot be in both 'Guests' and 'Registered' customer groups";
+        //    if (isInGuestsGroup && isInRegisteredGroup)
+        //        return "The customer cannot be in both 'Guests' and 'Registered' customer groups";
 
-            if (!isInGuestsGroup && !isInRegisteredGroup)
-                return "Add the customer to 'Guests' or 'Registered' customer group";
+        //    if (!isInGuestsGroup && !isInRegisteredGroup)
+        //        return "Add the customer to 'Guests' or 'Registered' customer group";
 
-            if (await _groupService.IsSalesManager(_workContext.CurrentCustomer) && ((isInGuestsGroup && !isInRegisteredGroup) || customerGroups.Count != 1))
-                return "Sales manager can assign role 'Registered' only";
+        //    if (await _groupService.IsSalesManager(_workContext.CurrentCustomer) && ((isInGuestsGroup && !isInRegisteredGroup) || customerGroups.Count != 1))
+        //        return "Sales manager can assign role 'Registered' only";
 
-            if (!await _groupService.IsAdmin(_workContext.CurrentCustomer) && isAdminGroup)
-                return "Only administrators can assign role 'Administrators'";
+        //    if (!await _groupService.IsAdmin(_workContext.CurrentCustomer) && isAdminGroup)
+        //        return "Only administrators can assign role 'Administrators'";
 
-            //no errors
-            return "";
-        }
+        //    //no errors
+        //    return "";
+        //}
         public virtual async Task<Customer> InsertCustomerModel(CustomerModel model)
         {
             var ownerId = string.Empty;
@@ -809,7 +813,7 @@ namespace Grand.Web.Admin.Services
             customer.Active = model.Active;
             customer.Attributes = model.Attributes;
 
-            if(!model.TwoFactorEnabled)
+            if (!model.TwoFactorEnabled)
                 await _userFieldService.SaveField(customer, SystemCustomerFieldNames.TwoFactorEnabled, model.TwoFactorEnabled);
 
             //email
